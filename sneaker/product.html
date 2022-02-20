@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js"></script>
+
+    <link rel="stylesheet" href="./CSS/Index.css">
+    <link rel="stylesheet" href="./CSS/product.css">
+    <link rel="stylesheet" href="./CSS/register.css">
+    <link rel="stylesheet" href="./CSS/search.css">
+    <link rel="stylesheet" href="./CSS/chitiet.css">
+    <!-- khung giao diện của cart-checkout -->
+    <link rel="stylesheet" href="./CSS/check_kout.css">
+    <link rel="stylesheet" href="./CSS/cart.css">
+
+    <link rel="icon" type="image/x-icon"
+        href="./IMG/1a0456563038b89eb255b295d4bfd44ab033585e_jpg_360x360_crop-smart_upscale-True_q85.jpg">
+    <title>Chi tiết sản phẩm</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <nav id="navbar">
+        <div class="nav">
+            <div class="Nav-Left">
+                <ul>
+                    <li> <a href="#"> <i class="fa fa-list-ul"></i></a></li>
+                    <li>
+                        <a href="./Index.html"> Trang chủ </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="./feedback.html"> Phản hồi </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="./sneaker.html"> Giày </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Quần Áo </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Phụ kiện </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Giày Nam </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Giày Nữ </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Quần Áo Nam </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Quần Áo Nữ </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Sale </a>
+                        <div class="spam"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="Nav-Right">
+                <i class="fa fa-search" onclick="get_search()"></i>
+                <a href="./favorites.html"><i class="fa fa-heart"></i></a>
+                <i class="fa fa-shopping-cart" onclick="get_checkout()"> <span class="len_cart">{{len_cart}}</span></i>
+                <div ng-bind="unlock_login()"></div>
+                <div id="btn_hover"> <button onclick="Login_page()" id="login_Account"><i class="fa fa-user-circle-o">
+                        </i></button> </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="body">
+        <div class="product_detail">
+            <div class="list_small_img">
+                <div id="list_img" class="list_img" ng-repeat="pr in product_img">
+                    <img src="{{pr.image}}" ng-click="seen_image(pr.image)" alt="giày jodan red 1">
+                </div>
+            </div>
+
+            <div class="image_detail">
+                <img id="image_main" src="{{Main_image}}" alt="giày jodan red">
+            </div>
+            <div class="text_product" ng-repeat="pr in products">
+                <h1> {{pr.name}}</h1>
+                <div class="price">
+                    <del ng-bind="set_vnd(pr.price)"> </del>
+                    <p ng-bind="set_vnd(pr.price)"></p>
+                </div>
+                <div class="review">
+                    <p> Hiện Giày Nike Air Jordan 1 Mid ‘Barcelona Sweater’ đã có mặt tại Shop với mức giá hấp
+                        dẫn nhất. Cập nhật nhanh nhất lịch ra mắt của các mẫu giày mới nhất và tin tức thời trang trong
+                        nước và trên thế giới bằng cách theo dõi Shop trên Facebook hoặc Instagram.</p>
+                    <p>Thương hiệu: Nike </p>
+                    <p>Thiết kế: Air Jordan 1 Mid</p>
+                    <p>Màu sắc: Milk Tea/Brown</p>
+                    <p>Mã sản phẩm: DC7294-600</p>
+                </div>
+                <div class="sell">
+                    <div class="set_sll_ct">
+                        <button class="btn_click_ct" ng-click="quantity(pr, '-')">-</button>
+                        <p id="cound_product">{{text}}</p>
+                        <button class="btn_click_ct" ng-click="quantity(pr, '+')">+</button>
+                    </div>
+                    <button class="btn_add" ng-click="get_cart(pr)">
+                        <i class="fa fa-shopping-cart"></i>
+                        Thêm vào giỏ hàng
+                    </button>
+                </div>
+                <button class="btn_like" ng-click="like(pr)">
+                    <i class="fa fa-heart-o"></i>
+                    Thêm vào yêu thích
+                </button>
+            </div>
+        </div>
+        <div class="same">
+            <div class="title_same">
+                <h1>Sản phẩm tương tự</h1>
+                <a href="./sneaker.html"> Xem thêm </a>
+            </div>
+            <div class="product_same">
+                <div class="card" ng-repeat="pr in products_same">
+                    <div id="like" class="card_heart" ng-click="like(pr)">
+                        <div ng-bind="get_class(pr.favorites)"> </div>
+                        <i class="fa {{text_class}}"></i>
+                    </div>
+                    <div class="card_cart" ng-click="get_cart(pr)"><i class="fa fa-shopping-cart"></i></div>
+
+                    <div class="card_sale">{{pr.sale}}</div>
+                    <a href="#" ng-click="link_product(pr.name, pr.id)">
+                        <div class="card_img"><img src="{{pr.image}}" alt="jordan-brand-air-jordan-3-retro-gs">
+                        </div>
+                        <div class="card_title">{{pr.name}}</div>
+                        <div class="card_price">{{pr.price}}</div>
+                    </a>
+                    <div class="card_size">
+                        <h4>Size: </h4>
+                        <span>38</span>
+                        <span>39</span>
+                        <span>40</span>
+                        <span>41</span>
+                        <span>42</span>
+                    </div>
+                    <div class="card_color">
+                        <h4>Số lượng: {{pr.quantily}}</h4>
+                    </div>
+                    <div class="card_action">
+                        <button>Buy now</button>
+                        <button ng-click="get_cart(pr)">Add cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- account  -->
+    <div id="my_account_container">
+        <div class="my_tile set_row_accound">
+            <i class="fa fa-user-circle-o"></i>
+            <p> {{name_account}}</p>
+        </div>
+        <div class=" set_row_accound">
+            <i class="fa fa-building"></i>
+            <a href="./purchase.html" id="link_account"> Đơn hàng</a>
+        </div>
+        <div class=" set_row_accound">
+            <i class="fa fa-cog"></i>
+            <a> Quản lý tài khoản</a>
+        </div>
+        <button ng-click="out_login()"> Thoát</button>
+    </div>
+
+    <!-- search -->
+    <div id="background_search">
+
+        <div class="exit_search"><i class="fa fa-remove" onclick="exit_search()"></i></div>
+        <div class="search_list">
+            <input ng-model="search_product" type="search" id="search_pr" placeholder="Search..." />
+            <button ng-click="search(search_product, 1, 0, 5)"><i class="fa fa-search"></i> Tìm kiếm</button>
+            <select ng-model="SortOrder" class="select_sort">
+                <option selected="selected" value=""> --- Sắp xếp theo --- </option>
+                <option value="+name">Xếp theo tên (a -> z)</option>
+                <option value="-name">Xếp theo tên (z -> a)</option>
+                <option value="+price">Xếp theo giá (tăng dần)</option>
+                <option value="-price">Xếp theo giá (giảm dần)</option>
+                <option value="+quantily">Xếp theo số lượng (thấp đến cao)</option>
+                <option value="-quantily">Xếp theo số lượng (cao đến thấp)</option>
+                <option value="+sales">Xếp theo số lượng bán (ít nhất)</option>
+                <option value="-sales">Xếp theo số lượng bán (nhiều nhất)</option>
+            </select>
+        </div>
+        <div id="list_product_search">
+            <div class="card" ng-repeat="pr in products_search | orderBy:SortOrder">
+                <div id="like" class="card_heart" ng-click="like(pr)">
+                    <div ng-bind="get_class(pr.favorites)"> </div>
+                    <i class="fa {{text_class}}"></i>
+                </div>
+                <div class="card_cart" ng-click="get_cart(pr)"><i class="fa fa-shopping-cart"></i></div>
+
+                <div class="card_sale">{{pr.sale}}</div>
+                <a href="#" ng-click="link_product(pr.name, pr.id)">
+                    <div class="card_img"><img src="{{pr.image}}" alt="jordan-brand-air-jordan-3-retro-gs">
+                    </div>
+                    <div class="card_title">{{pr.name}}</div>
+                    <div class="card_price" ng-bind="set_vnd(pr.price)"> </div>
+                </a>
+                <div class="card_size">
+                    <h4>Size: </h4>
+                    <span>38</span>
+                    <span>39</span>
+                    <span>40</span>
+                    <span>41</span>
+                    <span>42</span>
+                </div>
+                <div class="card_color">
+                    <h4>Số lượng: {{pr.quantily}}</h4>
+                </div>
+                <div class="card_action">
+                    <button>Buy now</button>
+                    <button ng-click="get_cart(pr)">Add cart</button>
+                </div>
+            </div>
+        </div>
+        <div id="pagination">
+            <p class="pagination_prev" ng-click="prev_search()">&laquo;</p>
+            <p id="count_pagination"> {{text_sr}} </p>
+            <p class="pagination_next" ng-click="next_search()"> &raquo;</p>
+        </div>
+    </div>
+    <!-- login -->
+    <div id="set">
+        <div id="front">
+            <div id="login_page">
+                <div class="sys_exit">
+                    <div><i class="fa fa-remove" onclick="onClick_Login()"></i></div>
+                </div>
+                <h1 class="txt set_h1"> Đăng nhập </h1>
+                <input type="email" class="set_width" id="email_lg" ng-model="email_lg"
+                    placeholder="Nhập tài khoản của bạn *" required>
+                <input type="password" class="set_width" id="pass_lg" ng-model="pass_lg"
+                    placeholder="Nhập mật khẩu của bạn *" required>
+                <!-- <button type="submit" class="set_width btn_submit" onclick="login()"> Đăng nhập</button> -->
+                <button type="submit" class="set_width btn_submit" ng-click="login(email_lg, pass_lg)"> Đăng
+                    nhập</button>
+
+                <p class="txt"> Bạn chưa có tài khoản? &nbsp <a href="#" onclick="onClick_Register()"> Đăng ký tại
+                        đây</a>. </p>
+            </div>
+        </div>
+        <div id="back">
+            <div id="Register_page">
+                <div class="sys_exit">
+                    <div><i class="fa fa-remove" onclick="onClick_Login()"></i></div>
+                </div>
+                <h1 class="txt set_h1"> Đăng ký </h1>
+                <input id="name" class="set_width" type="text" placeholder="Nhập tên của bạn *">
+                <input id="email" type="text" class="set_width" placeholder="Nhập email của bạn *">
+                <button type="submit" class="set_width btn_submit" onclick="sendEmail()"> Tạo Tài khoản</button>
+                <p class="txt"><a href="#" onclick="onClick_ok()"> Quay lại Đăng nhập</a> </p>
+            </div>
+        </div>
+    </div>
+    <!-- cart -->
+    <div id="check_kout">
+        <div class="cart_title">
+            <div>
+                <p>Giỏ hàng <span class="len_cart">{{len_cart}}</span></p>
+            </div>
+            <div class="exit_cart" onclick="exit_checkout()"><i class="fa fa-remove"></i></div>
+        </div>
+        <div id="cart_null">
+            <div class="icon_cart_null">
+                <i class="fa fa-shopping-bag"></i>
+            </div>
+            <div class="text_cart">
+                <p> Chưa có sản phẩm nào trong giỏ hàng</p>
+                <button onclick="exit_checkout()" class="btx_cart"> Tiếp tục mua sắm </button>
+            </div>
+        </div>
+        <div id="cart_checkout">
+            <div class="list_cart">
+                <!-- .reverse() thêm vào đễ đảo ngược -->
+                <div class="card_crt line" ng-repeat="sp in products_cart">
+
+                    <div class="acction">
+                        <a href="#" ng-click="link_product(sp.name, sp.id)">
+                            <div class="card_img_crt"><img src="{{sp.image}}" alt="jordan-brand-air-jordan-3-retro-gs">
+                            </div>
+                            <div class="info">
+                                <div class="card_title_crt">{{sp.name}}</div>
+                                <div class="card_price_crt" ng-bind="set_vnd(sp.price)"> </div>
+                            </div>
+                        </a>
+                        <div class="set_sll">
+                            <button class="btn_click" ng-click="quantity_checkout(sp, '-')">-</button>
+                            <p id="cound_product">{{sp.quantity}}</p>
+                            <button class="btn_click" ng-click="quantity_checkout(sp, '+')">+</button>
+                        </div>
+                        <div class="icon_action">
+                            <div><i class="fa fa-remove" ng-click="remove_checkout(sp)"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="action_cart">
+                <div class="sum_price">
+                    <p>Tạm tính: </p>
+                    <p class="ckeckout" ng-bind="set_vnd(sum_vnd())"></p>
+                </div>
+                <div>
+                    <a href="./my_cart.html"><button class="btx_cart"> Xem Giỏ Hàng</button> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fb-root"></div>
+
+
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "111229234730901");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v12.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <footer id="footer_all">
+        <div class="footer">
+            <div class="community">
+                <h3> CỘNG ĐỒNG CỦA CHÚNG TÔI </h3>
+                <ul>
+                    <li>
+                        <a href="#"> Facebook </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Instagram </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Youtube </a>
+                        <div class="spam"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="service">
+                <h3> DỊCH VỤ </h3>
+                <ul>
+                    <li>
+                        <a href="#"> Dịch vụ ký gửi</a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Chương trình Khách Hàng Thân Thiết </a>
+                        <div class="spam"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="customer">
+                <h3> HỖ TRỢ KHÁCH HÀNG </h3>
+                <ul>
+                    <li>
+                        <a href="#"> Đổi trả 45 ngày </a>
+                        <div class="spam"></div>
+                    </li>
+
+                    <li>
+                        <a href="#"> Chính sách bảo hành </a>
+                        <div class="spam"></div>
+                    </li>
+
+                    <li>
+                        <a href="#"> Chính sách vận chuyển </a>
+                        <div class="spam"></div>
+                    </li>
+
+                    <li>
+                        <a href="#"> Phương thức thanh toán </a>
+                        <div class="spam"></div>
+                    </li>
+
+                    <li>
+                        <a href="#"> Điều khoản dịch vụ </a>
+                        <div class="spam"></div>
+                    </li>
+
+                    <li>
+                        <a href="#"> Chính sách quyền riêng tư </a>
+                        <div class="spam"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="address">
+                <h3> ĐỊA CHỈ SHOP </h3>
+                <ul>
+                    <li>
+                        <a href="#"> Địa chỉ: Dầu giây </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Hotline: 0901389485 </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="#"> Zalo: 0901389485 </a>
+                        <div class="spam"></div>
+                    </li>
+                    <li>
+                        <a href="./feedback.html">Gmail</a>
+                        <div class="spam"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="end">
+            <p>Copyright ©2021 Kỳ Hoàng </p>
+        </div>
+    </footer>
+
+    <script src="./AngularJS/Set_up_product_ct.js"></script>
+
+    <script src="./JS/set_up_login.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="./JS/sendmail.js"></script>
+
+</body>
+
+</html>
+<noembed>

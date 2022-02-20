@@ -1,0 +1,39 @@
+.setup-banner{
+    display: flex;
+    flex-direction: row;
+}
+#banner{
+    float: left;
+    width: 1600px;
+    height: 615px;
+    margin: 10px;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+.anh{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    transition: all 1s;
+}
+
+.image_run{
+    width: 1100px;
+    height: 615px;
+}
+
+.img-right{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.img-right img{
+    width: 400px;
+    height: 200px;
+    margin: 5px;
+    transition: 0.3s;
+}
+.img-right img:hover{
+    opacity: 0.5;
+}

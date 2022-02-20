@@ -1,0 +1,105 @@
+.menu_page{
+    padding-top: 80px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom: 2px solid lightgray;
+    margin-bottom:10px;
+}
+.menu_page button{
+    width: 170px;
+    height:50px;
+    font-size:20px;
+    border:none;
+    background-color: #fff;
+}
+
+.spam_line{
+    transform: translate(0px, 32px);
+    border-bottom: 2px solid black;
+}
+.line{
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+}
+.tab_hide{    
+    transition: 0.5s;
+    display: none;
+}
+
+.info{
+    margin-top: 40px;
+    margin-left: 40px;
+    line-height: 40px;
+    color: black;
+}
+.card_crt a{
+    font-size: 16px;
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+    padding:0 10px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+.card_img_crt img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#cound_product, .card_price_crt, .ckeckout{
+    color: red;
+}
+.sum_price{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+} 
+#count_product{
+    margin: 15px 0;
+    padding:0px 10px;
+    line-height: 30px;
+    height: 28px;
+    color: black;
+    border: none;
+}
+.acction{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#list_null2{   
+    position: absolute;
+    transform: translate(550px, 120px);
+    font-size: 25px;
+}
+.set_text_line_2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.set_text_line_2 p{
+    padding: 0 5px;
+}
+.status{
+    color: red;
+}
+.icon_action button{
+    padding: 10px 30px;
+    font-size: 16px;
+    background: white;
+    border: 1px solid #000;
+    transition: 0.25s;
+}
+.icon_action button:hover{
+    background:#000;
+    color: white;
+}

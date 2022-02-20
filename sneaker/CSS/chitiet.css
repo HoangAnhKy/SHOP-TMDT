@@ -1,0 +1,136 @@
+:root{
+    --color-light-gray: rgb(204, 204, 204);
+}
+#body{
+    padding: 70px 0;
+}
+.product_detail{
+    display: flex;
+    flex-direction: row;
+}
+.image_detail img{
+    padding-left: 50px;
+    width: 720px;
+    height: 600px;
+    border-left: 2px solid var( --color-light-gray);
+}
+.list_small_img{
+    margin-left: 50px;
+}
+.list_img img{
+    margin: 5px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text_product{
+    margin: 0 50px;
+    text-align: center;
+}
+.text_product h1{
+    font-size: 45px;
+}
+.price del{
+    color: #000;
+    padding-right: 10px;
+}
+.price{
+    margin: 30px 0;
+    text-align: left;   
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.review{
+    border: 3px solid var( --color-light-gray);
+    width: 435px;
+    text-align: left;
+    padding: 10px 30px;
+    line-height: 2.0;
+    font-size: 16px;
+}
+
+.set_sll_ct{
+    margin: 15px 0;
+    padding: 5px 10px;
+    border: 2px solid var( --color-light-gray); 
+    width: 100px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn_click_ct{
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.25s;
+}
+.sell{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.btn_add{
+    width: 320px;
+    height: 45px;
+    margin: 15px;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+.btn_like{
+    font-size: 16px;
+    margin-left: 100px;
+    height: 45px;
+    width: 320px;
+    background: rgb(230, 225, 225);
+    color: black;
+    border: none
+}
+/* set hiệu ứng */
+.list_img img:hover{
+    cursor: pointer;
+}
+.set_sll_ct button:hover{
+    cursor: pointer;
+    background-color: var(--color-light-gray);
+}
+.btn_like:hover, .btn_add:hover{
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+/* same */
+.title_same{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title_same a{
+    text-decoration: none;
+    color: black;
+    padding-right: 10px;
+    margin-top: 40px;
+}
+.title_same a:hover{
+    color: blue;
+}
+.title_same h1{
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.product_same{
+    display: flex;
+    flex-direction: row;
+    padding-left: 35px;
+}

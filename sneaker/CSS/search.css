@@ -1,0 +1,78 @@
+.exit_search{
+    float: right;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+#background_search{
+    width: 100%;
+    background: white;
+    border-bottom: 2px solid black;
+    margin-bottom:10px;
+    position: absolute;
+    top: -800px;
+    z-index: 4;
+}
+.select_sort{
+    font-size: 20px;
+    background: white;
+    padding: 11px 10px;
+    text-align: center;
+}
+.option_list{
+    text-align: unset;
+}
+.search_list{
+    /* width: 100%; */
+    padding: 50px 0;
+    margin-left: 20%;
+}
+.search_list input[type="search"]{
+    font-size: 20px;
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    border-top: NONE;
+    border-right: NONE;
+    border-left: NONE;
+    border-bottom: 1px solid gray;
+}
+.search_list input[type="search"]:focus {
+    outline-width: 0;
+}
+.search_list button{
+    border: none;
+    font-size: 20px;
+    background: white;
+    padding: 11px 10px;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+.search_list button:hover{
+    background: rgb(212, 212, 212);
+}
+
+#list_product_search{
+    display:flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+
+
+#pagination {
+    display: none;
+    margin: 15px 0;
+    margin-left: 48%;
+  }
+  
+  #pagination p {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    font-size: 20px;
+    
+    border: 1px solid rgb(100, 100, 100);
+  }
+  #pagination p:hover {
+      cursor: pointer;
+      opacity: 0.5;
+  }

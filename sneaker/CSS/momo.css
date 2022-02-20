@@ -1,0 +1,46 @@
+#momo{
+    width: 270px;
+    height: 470px;
+    border: 1px solid lightgray;
+    background:white;
+    box-shadow: 2px 2px 4px;
+    display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+}
+#momo p{
+    font-size: 20px;
+    padding:10px 55px;
+}
+.img_pay{
+    padding: 10px;
+    object-fit: cover;
+}
+.img_pay img{
+    padding: 40px 25px;
+}
+.acction_pay{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+.acction_pay input[type="text"]{
+    padding: 10px;
+    margin: 10px;
+}
+
+.acction_pay button, .btn_with_momo{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+.acction_pay button:hover{
+    background-color: white;
+    color: black;
+}

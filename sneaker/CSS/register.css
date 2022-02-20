@@ -1,0 +1,133 @@
+.sys_exit{
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    font-size: 20px;
+}
+#set{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 450px;
+    top: -800px;
+    transition: 0.5s;
+    z-index: 4;
+}
+#front, #back{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden; /* Xác định bề mặt sau của thành phần khi thực hiện một chuyển động xoay.*/
+    position: absolute;
+    transition: transform .6s linear;
+}
+
+#front{
+    transform: perspective(600px) rotateY(0deg);
+}
+
+#back{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+#login_page, #Register_page{  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 2px 2px 4px;
+
+    background: white;
+    width: 450px;
+    height: 400px;
+    padding-top: 25px;
+    position: fixed;
+    z-index: 4;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.set_h1{
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+.set_width{
+    width: 350px;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.txt{
+    color: rgb(61, 60, 60);
+}
+#login_page a, #Register_page a{
+    color: black;
+    text-decoration: none
+}
+.btn_submit{
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+/* my account */
+#my_account_container{
+    width: 300px;
+    height: 170px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    
+    display: none;
+    flex-direction: column;
+
+    position:absolute;
+    background: white;
+    top: 52px;
+    right: 0;
+    
+    z-index: 4;
+    
+    position: fixed;   
+}
+.set_row_accound{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid lightgray;
+}
+.set_row_accound i{
+    padding:0 10px;
+}
+.my_tile p {
+    font-weight: bold;
+}
+.set_sll{
+    display: flex;
+    flex-direction: row;
+}
+.btn_click{
+    width: 30px;
+    line-height: 30px;
+    height: 30px;
+    margin: 15px;
+    background: white;
+    color: black;
+    border: none;
+    font-size: 25px;
+    font-weight: 500;
+}
+#my_account_container button{
+    border: none;
+    background: white;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.set_row_accound:hover{
+    opacity: 0.5;
+}

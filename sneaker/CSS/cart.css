@@ -1,0 +1,156 @@
+.name_cart{
+    padding-top: 100px;
+    padding-left: 45%;
+    font-weight: 500;
+}
+.list_cart{
+    width: 100%;
+    padding: 0 10px;
+    overflow: auto;
+    height: 525px;
+}
+
+.out_fit{
+    padding-left: 10px;
+}
+.card_crt a{
+    font-size: 16px;
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+    padding:0 10px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.card_img_crt img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.set_sll{
+    display: flex;
+    flex-direction: row;
+}
+.btn_click{
+    width: 30px;
+    line-height: 30px;
+    height: 30px;
+    margin: 15px;
+    background: white;
+    color: black;
+    border: none;
+    font-size: 25px;
+    font-weight: 500;
+}
+#cound_product{
+    margin: 15px 0;
+    padding:0px 10px;
+    line-height: 30px;
+    height: 28px;
+    color: black;
+    border: none;
+}
+.acction{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.info{
+    margin-top: 40px;
+    line-height: 40px;
+    color: black;
+}
+.card_price_crt{
+    color:red;
+}
+.icon_action{
+    font-size: 25px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+}
+.icon_action div{
+    margin: 0 5px;
+}
+/*     */
+.set_up_Cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 20px; 
+}
+.sum_cart{
+    text-align: center;
+    width: 500px;
+    height: 525px;
+    border: 1px solid black;
+    line-height: 2;
+    padding: 0 10px;
+}
+.sum_cart h2{font-weight: 500;}
+
+.line{
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.sum_price{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+}  
+.ship{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.ckeckbox{
+    margin-left: 25px;
+}
+.cbxShip{
+    padding: 10px;
+    margin: 10px;
+}
+.btn_sub{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border:none;
+    background: black;
+    color: white;
+}
+.ckeckout{
+    color: red;
+}
+.btn_click:hover{
+    border-radius: 50%;
+    background: rgb(218, 218, 218);
+}
+#list_null{   
+    position: absolute;
+    transform: translate(-285px, 175px);
+    font-size: 25px;
+}
+#list_null2{   
+    position: absolute;
+    transform: translate(550px, 120px);
+    font-size: 25px;
+}
+.len_cart{
+    font-size: 10px;
+    font-weight: bold;
+    color:white;
+    background:red;
+    border-radius: 50%;
+    padding:2px 4px;
+    position: absolute;
+    transform: translate(1px, -6px);
+}

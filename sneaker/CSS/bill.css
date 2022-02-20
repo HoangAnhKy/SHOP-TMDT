@@ -1,0 +1,59 @@
+#body{
+
+    padding: 80px 0;
+}
+.setBill{
+    
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.bill{
+    display:flex;
+    flex-direction: column;
+    width: 700px;
+    height:525px;
+    
+    overflow: auto;
+}
+.th_bill, .td_bill{
+    display:flex;
+    flex-direction: row;
+    
+    padding: 10px;
+}
+.th_bill h3{
+    padding: 10px;
+}
+.td_code{
+    width: 100px;
+   
+}
+.td_Date{
+    width: 200px;
+   
+}
+.td_trading{
+    width: 200px;
+   
+}
+.listCart{
+    padding: 0 10px;
+    overflow: auto;
+    height: 525px;
+    width: 750px;
+}
+.nosubmit, .submit{
+    padding: 5px 10px;
+}
+.submit{
+    border: 1px solid green;
+    background: green;
+    color: white;
+}
+
+.nosubmit{
+    border: 1px solid red;
+    background: red;
+    color: white;
+}

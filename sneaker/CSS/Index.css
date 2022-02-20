@@ -1,0 +1,166 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    font-size: 16px;
+    font-family: Helvetica, Sans-Serif;
+    background-color: white;
+}
+/* nav */
+#navbar {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    z-index: 3;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    border-bottom: 1px solid lightgray;
+}
+
+.Nav-Left .fa{
+    font-size: 20px;
+}
+.Nav-Left ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.Nav-Left ul li{
+    font-size: 18px;
+    padding: 15px;
+}
+.Nav-Left ul li a{
+    text-decoration: none;
+    color: black;
+}
+.Nav-Right{
+    display: flex;
+    flex-direction: row;
+}
+#login_Account{
+    border:none;
+    background: white;
+}
+.Nav-Right .fa{
+    font-size: 20px;
+    padding: 15px;color: black;
+}
+.Nav-Left ul li:hover > .spam{
+    cursor: pointer;
+   /*border-bottom: 1px solid black;*/
+   animation-name:border_line;
+   animation-duration: 400ms;
+   animation-fill-mode: forwards;
+}
+
+@keyframes border_line {
+    from{border-bottom: 2px solid black; width:0% ; }
+    to{border-bottom: 2px solid black; width:100% ;}
+}
+
+.fa:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/********************************************************************************************************************************************/
+
+/* body */
+.set_up_product{
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs_link, .tabs_link2, .tabs_link3 {
+    font-size: 18px;
+    padding:0 20px;
+    background-color: white;
+    color: gray;
+    width: 70px;
+    height: 20px;
+    transition: 0.5s;
+    z-index: 1;
+}
+.tabs_link:hover, .tabs_link2:hover, .tabs_link3:hover{
+    cursor: pointer;
+    font-size:  x-large;
+    font-weight: bold;
+    color: black;
+}
+.div_product {
+    color: black;
+    font-size: 35px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.unhidden{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    z-index: 1;
+    padding-left: 30px;
+}
+.name_tabs{
+    display: flex;
+    flex-flow: row;
+    justify-content:center;
+    font-size: 18px;
+}
+.name_tabs button {
+    border: none;
+    margin: 5px 10px;
+}
+/********************************************************************************************************************************************/
+
+.footer{
+    z-index: 1;
+    width: 100%;
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    line-height: 2;
+    padding: 20px 0px;
+}
+.footer h3{
+    color: gray;
+}
+
+.footer ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.footer ul{
+    list-style: none;
+}
+
+.footer ul li:hover > .spam{
+   animation-name: border_line2;
+   animation-duration: 400ms;
+   animation-fill-mode: forwards;
+}
+
+@keyframes border_line2 {
+    from{border-bottom: 2px solid cyan; width:0% ; }
+    to{border-bottom: 2px solid cyan; width:100% ;}
+}
+
+.end{
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+}
+.set_row_accound a{
+    text-decoration: none;
+    color: #000;    
+}
