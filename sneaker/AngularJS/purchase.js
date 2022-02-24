@@ -41,7 +41,20 @@ myApp.controller('myController', function ($scope, $http) {
     }, function () {
         alert("Lỗi kết nối dữ liệu!!!");
     });
-
+    $scope.set_status = function (stt) {
+        console.log(stt);
+        if (stt == "chohang") {
+            return "Chờ hàng";
+        } else if (stt == "choxacnhan") {
+            $cope.status_txt = "Chờ xác nhận";
+        } else if (stt == "danggiao") {
+            return "Đang giao";
+        } else if (stt == "dagiao") {
+            return "Đã giao";
+        } else if (stt == "huy") {
+            return "Đã hủy";
+        }
+    }
     $scope.get_all = function () {
         $scope.get_bill();
         $scope.get_cart();

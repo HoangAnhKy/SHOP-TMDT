@@ -258,6 +258,8 @@ myApp.controller('myController', function ($scope, $http) {
     }).then(function (reponse) {
         dateime = reponse.data.bill;
     })
+
+
     $scope.get_date_bill = function () {
         $http({
             method: "get",
@@ -267,7 +269,22 @@ myApp.controller('myController', function ($scope, $http) {
             console.log(dateime);
         })
     }
-
+    $scope.sendmail_pay = function (sp, status, count, code) {
+        $http({
+            method: "post",
+            url: `./PHP/send.php`,
+            data: {
+                'code_bill': code,
+                'name_accound': sessionStorage.getItem("my_account_user"),
+                'name': sp.name,
+                'price': sp.price,
+                'quantity': count,
+                'status': status
+            }
+        }).then(function (reponse) {
+            console.log(reponse.data);
+        })
+    }
     $scope.pay = function () {
         if ($scope.momo == 'CÓ' && $scope.normal == 'CÓ') {
             alert('Bạn chỉ có thể chọn một trong hai phương thức trên');
@@ -289,9 +306,11 @@ myApp.controller('myController', function ($scope, $http) {
                     var sales = arr[0].sales + array[i].quantity;
                     $scope.update_quantity(array[i].name, count, sales);
                     try {
-                        $scope.create_bill(array[i], "chờ hàng", array[i].quantity, dateime[dateime.length - 1].code_Bill + 1);
+                        $scope.create_bill(array[i], "chohang", array[i].quantity, dateime[dateime.length - 1].code_Bill);
+                        $scope.sendmail_pay(array[i], "chohang", array[i].quantity, dateime[dateime.length - 1].code_Bill);
                     } catch (e) {
-                        $scope.create_bill(array[i], "chờ hàng", 0);
+                        $scope.create_bill(array[i], "chohang", 0);
+                        $scope.sendmail_pay(array[i], "chohang", 0);
                     }
                     $scope.remove_bill(array[i]);
                 }
@@ -321,9 +340,11 @@ myApp.controller('myController', function ($scope, $http) {
                     var sales = arr[0].sales + array[i].quantity;
                     $scope.update_quantity(array[i].name, count, sales);
                     try {
-                        $scope.create_bill(array[i], "chờ xác nhận", array[i].quantity, dateime[dateime.length - 1].code_Bill + 1);
+                        $scope.create_bill(array[i], "choxacnhan", array[i].quantity, dateime[dateime.length - 1].code_Bill);
+                        $scope.sendmail_pay(array[i], "choxacnhan", array[i].quantity, dateime[dateime.length - 1].code_Bill);
                     } catch (e) {
-                        $scope.create_bill(array[i], "chờ xác nhận", 0);
+                        $scope.create_bill(array[i], "choxacnhan", 0);
+                        $scope.sendmail_pay(array[i], "choxacnhan", 0);
                     }
                     $scope.remove_bill(array[i]);
                 }

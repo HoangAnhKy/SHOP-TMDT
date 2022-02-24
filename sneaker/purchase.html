@@ -128,7 +128,7 @@
                     </div>
                     <div class="set_text_line_2">
                         <p>Trạng thái: </p>
-                        <div class="status">{{sp.status}}</div>
+                        <div class="status" ng-bind="set_status(sp.status)"></div>
                     </div>
                     <div class="icon_action">
                         <button>Mua lại </button>
@@ -140,7 +140,7 @@
 
         <div id="chophanhoi" class="tab_hide">
             <div id="chophanhoi_null"></div>
-            <div class="card_crt line" ng-repeat="sp in products | filter:'chờ xác nhận'">
+            <div class="card_crt line" ng-repeat="sp in products | filter:'choxacnhan'">
 
                 <div class="acction">
                     <a ng-click="link_product_sr(sp.name, sp.id)">
@@ -157,7 +157,7 @@
                     </div>
                     <div class="set_text_line_2">
                         <p>Trạng thái: </p>
-                        <div class="status">{{sp.status}}</div>
+                        <div class="status" ng-bind="set_status(sp.status)"></div>
                     </div>
                     <div class="icon_action">
                         <button>Mua lại </button>
@@ -168,7 +168,7 @@
         </div>
         <div id="chohang" class="tab_hide">
             <div id="chohang_null"></div>
-            <div class="card_crt line" ng-repeat="sp in products | filter:'chờ hàng'">
+            <div class="card_crt line" ng-repeat="sp in products | filter:'chohang'">
                 <div class="acction">
                     <a ng-click="link_product_sr(sp.name, sp.id)">
                         <div class="card_img_crt"><img src="{{sp.image}}" alt="jordan-brand-air-jordan-3-retro-gs">
@@ -184,7 +184,7 @@
                     </div>
                     <div class="set_text_line_2">
                         <p>Trạng thái: </p>
-                        <div class="status">{{sp.status}}</div>
+                        <div class="status" ng-bind="set_status(sp.status)"></div>
                     </div>
                     <div class="icon_action">
                         <button>Mua lại </button>
@@ -196,7 +196,7 @@
 
         <div id="danggiao" class="tab_hide">
             <div id="danggiao_null"></div>
-            <div class="card_crt line" ng-repeat="sp in products | filter:'đang giao'">
+            <div class="card_crt line" ng-repeat="sp in products | filter:'danggiao'">
 
                 <div class="acction">
                     <a ng-click="link_product_sr(sp.name, sp.id)">
@@ -206,14 +206,15 @@
                             <div class="card_title_crt">{{sp.name}}</div>
                             <div class="card_price_crt" ng-bind="set_vnd(sp.price)"> </div>
                         </div>
-                    </a>
+                    </a>s
                     <div class="set_text_line_2">
                         <p>Số lượng: </p>
                         <p id="cound_product">{{sp.quantity}}</p>
                     </div>
+
                     <div class="set_text_line_2">
                         <p>Trạng thái: </p>
-                        <div class="status">{{sp.status}}</div>
+                        <div class="status" ng-bind="set_status(sp.status)"></div>
                     </div>
                     <div class="icon_action">
                         <button>Mua lại </button>
@@ -224,7 +225,7 @@
         </div>
         <div id="dagiao" class="tab_hide">
             <div id="dagiao_null"></div>
-            <div class="card_crt line" ng-repeat="sp in products | filter:'đã giao'">
+            <div class="card_crt line" ng-repeat="sp in products | filter:'dagiao'">
                 <div class="acction">
                     <a ng-click="link_product_sr(sp.name, sp.id)">
                         <div class="card_img_crt"><img src="{{sp.image}}" alt="jordan-brand-air-jordan-3-retro-gs">
@@ -240,7 +241,7 @@
                     </div>
                     <div class="set_text_line_2">
                         <p>Trạng thái: </p>
-                        <div class="status">{{sp.status}}</div>
+                        <div class="status" ng-bind="set_status(sp.status)"></div>
                     </div>
                     <div class="icon_action">
                         <button>Mua lại </button>
@@ -252,7 +253,7 @@
 
         <div id="huy" class="tab_hide">
             <div id="huy_null"></div>
-            <div class="card_crt line" ng-repeat="sp in products | filter:'hủy'">
+            <div class="card_crt line" ng-repeat="sp in products | filter:'huy'">
 
                 <div class="acction">
                     <a ng-click="link_product_sr(sp.name, sp.id)">
@@ -269,7 +270,7 @@
                     </div>
                     <div class="set_text_line_2">
                         <p>Trạng thái: </p>
-                        <div class="status">{{sp.status}}</div>
+                        <div class="status" ng-bind="set_status(sp.status)"></div>
                     </div>
                     <div class="icon_action">
                         <button>Mua lại </button>
@@ -562,7 +563,7 @@
         </div>
 
         <div class="end">
-            <p>Copyright ©2021 Kỳ Hoàng </p>
+            <p>Copyright ©2021 Hoàng Anh Kỳ, Đỗ Đan Trường, Lê Đại Dương</p>
         </div>
     </footer>
     <script src="./AngularJS/purchase.js"></script>

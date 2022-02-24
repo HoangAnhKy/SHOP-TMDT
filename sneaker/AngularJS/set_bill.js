@@ -59,7 +59,20 @@ myApp.controller('myController', function ($scope, $http) {
             alert("Lỗi kết nối dữ liệu!!!");
         });
     }
-
+    $scope.set_status = function (stt) {
+        console.log(stt);
+        if (stt == "chohang") {
+            return "Chờ hàng";
+        } else if (stt == "choxacnhan") {
+            $cope.status_txt = "Chờ xác nhận";
+        } else if (stt == "danggiao") {
+            return "Đang giao";
+        } else if (stt == "dagiao") {
+            return "Đã giao";
+        } else if (stt == "huy") {
+            return "Đã hủy";
+        }
+    }
     $scope.get_cart = function () {
         $http.get(`./PHP/Get_cart.php?name_accound=${sessionStorage.getItem("my_account_user")}`).then(function (res) {
             array = res.data.cart;

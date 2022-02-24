@@ -96,8 +96,8 @@
                     <p class="td_Date">{{b.date}}</p>
                     <p class="td_trading">{{b.Trading_code}}</p>
                     <p class="td_Acction">
-                        <button class="submit" ng-click="update_bill(b.code_Bill, 'chờ hàng')"> XÁC NHẬN </button>
-                        <button class="nosubmit" ng-click="update_bill(b.code_Bill, 'hủy')">HỦY</button>
+                        <button class="submit" ng-click="update_bill(b.code_Bill, 'chohang')"> XÁC NHẬN </button>
+                        <button class="nosubmit" ng-click="update_bill(b.code_Bill, 'huy')">HỦY</button>
                     </p>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="set_text_line_2">
                             <p>Trạng thái: </p>
-                            <div class="status">{{sp.status}}</div>
+                            <div class="status" ng-bind="set_status(sp.status)"></div>
                         </div>
                         <div class="set_text_line_2">
                             <p>người mua: </p>
@@ -136,6 +136,7 @@
 
     <!-- account  -->
     <div id="my_account_container">
+
         <div class="my_tile set_row_accound">
             <i class="fa fa-user-circle-o"></i>
             <p> {{name_account}}</p>
@@ -413,7 +414,7 @@
         </div>
 
         <div class="end">
-            <p>Copyright ©2021 Kỳ Hoàng </p>
+            <p>Copyright ©2021 Hoàng Anh Kỳ, Đỗ Đan Trường, Lê Đại Dương</p>
         </div>
     </footer>
     <script src="./AngularJS/set_bill.js"></script>

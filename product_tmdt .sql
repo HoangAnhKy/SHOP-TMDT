@@ -57,11 +57,7 @@ CREATE TABLE `bill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bill`
---
 
-INSERT INTO `bill` (`code_Bill`, `date`, `Trading_code`) VALUES
-(1, '2022-02-20 20:10:30', 0);
 
 -- --------------------------------------------------------
 
@@ -331,12 +327,6 @@ CREATE TABLE `status_cart` (
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `status_cart`
---
-
-INSERT INTO `status_cart` (`code_Bill`, `name_accound`, `name`, `sale`, `image`, `price`, `quantity`, `favorites`, `product_new`, `id`, `status`) VALUES
-(1, 'mie', 'jodan gray 2', '-30%', './IMG/Nike-Air-Force-1-Mid-Jewel-NYC.png', 4800000, 10, 0, 0, 1, 'chờ hàng');
 
 --
 -- Indexes for dumped tables
@@ -362,7 +352,7 @@ ALTER TABLE `bill`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `code_Bill` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `code_Bill` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
