@@ -1,6 +1,6 @@
 <?php
 //insert.php
-$connect = new PDO("mysql:host=localhost; dbname=product_tmdt","root","");
+    include("conn.php");
 $code_bill = $_GET["code_bill"];
 $status = $_GET["status"];
 $query = "UPDATE `status_cart` SET `status` = '$status' WHERE `code_Bill` = '$code_bill';";

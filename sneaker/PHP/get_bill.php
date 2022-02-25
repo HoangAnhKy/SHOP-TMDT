@@ -1,6 +1,6 @@
 <?php
 
-    $connect = new PDO("mysql:host=localhost; dbname=product_tmdt","root","");
+    include("conn.php");
     $name_accound = $_GET["name_accound"];    
     $query = "SELECT * FROM `status_cart` WHERE name_accound = '$name_accound';";
 

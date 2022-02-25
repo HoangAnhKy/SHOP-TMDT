@@ -1,6 +1,6 @@
 <?php
 
-    $connect = new PDO("mysql:host=localhost; dbname=product_tmdt","root","");  
+include("conn.php");
     $name = $_GET['name']; 
     $query = "SELECT * FROM `product` WHERE `name` like '%".$name."%'";
     

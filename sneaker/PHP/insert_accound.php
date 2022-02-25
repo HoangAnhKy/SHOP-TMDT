@@ -5,7 +5,7 @@
         $email = $_POST['email'];
         $body = $_POST['body'];
     }
-    $connect = new PDO("mysql:host=localhost; dbname=product_tmdt","root",""); 
+    include("conn.php");
     $query = "INSERT INTO accound (name, email, pass, Role) VALUES('$name', '$email', '$body', 'user');";
     $statement = $connect->prepare($query);
     try{

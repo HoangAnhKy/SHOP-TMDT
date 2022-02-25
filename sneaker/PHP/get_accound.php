@@ -1,7 +1,6 @@
 <?php
      
-
-    $connect = new PDO("mysql:host=localhost; dbname=product_tmdt","root",""); 
+    include("conn.php");
     
     $email = $_GET['email']; 
     $pass = $_GET['pass']; 

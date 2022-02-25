@@ -1,6 +1,7 @@
 <?php
 //insert.php
-$connect = new PDO("mysql:host=localhost; dbname=product_tmdt","root","");
+
+include("conn.php");
 $data = json_decode(file_get_contents("php://input"));
 
 $code_bill = $data->code_bill;

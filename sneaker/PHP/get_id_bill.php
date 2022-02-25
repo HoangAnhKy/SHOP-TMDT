@@ -1,6 +1,7 @@
 <?php
 
-    $connect = new PDO("mysql:host=localhost; dbname=product_tmdt","root","");
+    
+include("conn.php");
     $query = "SELECT * FROM `bill`";
 
     $statement = $connect->prepare($query);
